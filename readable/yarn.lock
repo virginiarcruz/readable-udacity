@@ -5177,7 +5177,7 @@ react-dev-utils@^4.2.1:
     text-table "0.2.0"
 
 react-dom@^16.0.0:
-  version "16.0.0"
+  version ">=16.0.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
   dependencies:
     fbjs "^0.8.16"
