@@ -9,12 +9,10 @@ class Posts extends Component {
     posts : this.props.posts
   }
 
-
     componentWillReceiveProps(newProps) {
       this.setState({
         posts: newProps.posts
       });
-      // console.log(this.state.posts)
     }
 
 

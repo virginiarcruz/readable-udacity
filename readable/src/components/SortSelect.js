@@ -21,7 +21,7 @@ class SortSelect extends Component {
     console.log(sortKeyPosts, sortKeyComments, sortTarget);
     return (
       <div className="sort-select-container">
-        <span className="header">Sort By:</span>
+        <span className="title-sort">Sort By:</span>
         <select className="sort-select form-control" id="sort-by" value={sortTarget === "posts" ? sortKeyPosts : sortKeyComments} name="sort-by" onChange={this.handleChange}>
           <option value="voteScore">Vote Score</option>
           <option value="timestamp">Timestamp</option>

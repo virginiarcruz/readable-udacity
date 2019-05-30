@@ -15,7 +15,7 @@ export default class Comment extends Component {
     return (
       <div key={comment.id} className="card">
         <p className="lead">{comment.body}</p>
-        <div className="post-meta1">
+        <div className="post-comments">
           <span>Votes: {comment.voteScore}
           </span>
           <Button onClick={() => this.props.vote(comment.id, "upVote")}>
@@ -26,15 +26,15 @@ export default class Comment extends Component {
           </Button>
 
         </div>
-        <div className="post-meta2">
+        <div className="post-data">
           <span>By: {comment.author}</span>
           <span>
             on: {this.getDateTimeFromTimestamp(comment.timestamp)}
             in</span>
-          <Button onClick={() => this.props.deleteComment(comment)}>
-            delete
+          <Button className="btn btn-danger" onClick={() => this.props.deleteComment(comment)}>
+            Delete
           </Button>
-          <Link to={`/comments/${comment.id}/edit`}>
+          <Link className="btn btn-success" to={`/comments/${comment.id}/edit`}>
             Edit
           </Link>
         </div>

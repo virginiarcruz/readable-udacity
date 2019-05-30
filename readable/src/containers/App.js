@@ -10,9 +10,7 @@ import {Link} from 'react-router-dom';
 class App extends Component {
 
   componentWillMount() {
-
     const {getAll} = this.props;
-
       getAll()
   }
 
@@ -22,7 +20,12 @@ class App extends Component {
         <Navbar/>
         <Categories/>
         <SortSelect sortTarget="posts"/>
-        <Link to="/new" className="btn btn-primary btn-lg btn-new-post">Add Post</Link>
+        <Link 
+          to="/new"
+          variant="primary"
+          className="btn btn-primary btn-lg btn-new-post">
+          Add Post
+          </Link>
         <Posts/>
       </div>
     );

@@ -14,22 +14,24 @@ export default class Post extends Component {
     return (
       <div key={post.id} className="card">
         <h2>{post.title}</h2>
-        <p className="lead">{post.body}</p>
-        <div className="post-meta1">
-          <span>Comments : {post.commentCount} </span>
-
-          <Button onClick={() => this.props.vote(post.id, "upVote")}> Upvote </Button>
+        <article className="lead">{post.body}</article>
+        <div className="post-footer post-comments">
+          <span>Comments: {post.commentCount} </span>
+          <Button
+            onClick={() => this.props.vote(post.id, "upVote")}>
+              Upvote 
+          </Button>
           <span> Votes: {post.voteScore} </span>
           <Button onClick={() => this.props.vote(post.id, "downVote")}> Downvote </Button>
 
         </div>
-        <div className="post-meta2">
+        <div className="post-footer post-data">
           <span>By: {post.author} </span>
           <span> on: {this.getDateTimeFromTimestamp(post.timestamp)} in </span>
             <Link to={`/${post.category}/posts`}>{post.category} </Link>
-          <Button onClick={() => this.props.deletePost(post)}> delete </Button>
-          <Link to={`/${post.category}/posts/${post.id}/edit`}> Edit </Link>
-          <Link to={`/${post.category}/posts/${post.id}`}> View </Link>
+          <Button className="btn-danger" onClick={() => this.props.deletePost(post)}> Delete </Button>
+          <Link className="btn btn-success" to={`/${post.category}/posts/${post.id}/edit`}> Edit </Link>
+          <Link className="btn btn-secondary" to={`/${post.category}/posts/${post.id}`}> View </Link>
         </div>
       </div>
 

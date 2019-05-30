@@ -8,25 +8,29 @@ import {ButtonGroup} from 'react-bootstrap';
 class Categories extends Component {
 
   componentWillMount() {
-    console.log(this.props)
     const {getCategories} = this.props;
     getCategories()
   }
 
-
   genCategoryList = (categories) => {
-
     if (categories !== undefined) {
       return (
-        <div >
-          <span className="header">
-            Categories</span>
-          <ButtonGroup >
-
+        <div className="content-categories">
+          <span className="title-categories">
+            Filter Categories:
+          </span>
+          
+          <ButtonGroup>
             {categories.map((category) => {
 
               return (
-                <Link key={category.path} to={`/${category.path}/posts`} onClick={() => this.props.getAllForCategory(category.path)} className="btn btn-default btn-lg cat-link">{category.name}</Link>
+                <Link 
+                  variant="light"
+                  key={category.path}
+                  to={`/${category.path}/posts`}
+                  onClick={() => this.props.getAllForCategory(category.path)}
+                  className="btn btn-light btn-lg cat-link">{category.name}
+                </Link>
               )
             })
 }
@@ -50,7 +54,6 @@ class Categories extends Component {
 }
 
 function mapStateToProps(state) {
-
   return {categories: state.Categories.categories,
   selected_category: state.Categories.selected_category}
 }
