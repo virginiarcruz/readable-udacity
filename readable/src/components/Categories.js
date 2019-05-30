@@ -27,7 +27,7 @@ class Categories extends Component {
                 <Link 
                   variant="light"
                   key={category.path}
-                  to={`/${category.path}/posts`}
+                  to={`/${category.path}`}
                   onClick={() => this.props.getAllForCategory(category.path)}
                   className="btn btn-light btn-lg cat-link">{category.name}
                 </Link>

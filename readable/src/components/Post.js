@@ -28,10 +28,10 @@ export default class Post extends Component {
         <div className="post-footer post-data">
           <span>By: {post.author} </span>
           <span> on: {this.getDateTimeFromTimestamp(post.timestamp)} in </span>
-            <Link to={`/${post.category}/posts`}>{post.category} </Link>
+            <Link to={`/${post.category}/`}>{post.category} </Link>
           <Button className="btn-danger" onClick={() => this.props.deletePost(post)}> Delete </Button>
-          <Link className="btn btn-success" to={`/${post.category}/posts/${post.id}/edit`}> Edit </Link>
-          <Link className="btn btn-secondary" to={`/${post.category}/posts/${post.id}`}> View </Link>
+          <Link className="btn btn-success" to={`/${post.category}/${post.id}/edit`}> Edit </Link>
+          <Link className="btn btn-secondary" to={`/${post.category}/${post.id}`}> View </Link>
         </div>
       </div>
 

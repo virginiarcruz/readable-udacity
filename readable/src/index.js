@@ -25,18 +25,17 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 store.dispatch(PostsActions.getAll())
 
-
 const Root = ({store}) => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/new" component={NewPost}/>
-        <Route exact path="/:category/posts/:id/new_comment" component={NewComment}/>
+        <Route path="/new" component={NewPost}/>
+        <Route exact path="/:category/:id/new_comment" component={NewComment}/>
         <Route exact path="/" component={App}/>
         <Route exact path="/404" component={NotFoundPage}/>
-        <Route exact path="/:category/posts" component={Category}/>
-        <Route exact path="/:category/posts/:id" component={PostPage}/>
-        <Route exact path="/:category/posts/:id/edit" component={EditPost}/>
+        <Route exact path="/:category" component={Category}/>
+        <Route exact path="/:category/:id" component={PostPage}/>
+        <Route exact path="/:category/:id/edit" component={EditPost}/>
         <Route exact path="/comments/:comment_id/edit" component={EditComment}/>
       </Switch>
     </Router>

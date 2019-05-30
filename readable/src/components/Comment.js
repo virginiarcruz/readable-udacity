@@ -11,7 +11,6 @@ export default class Comment extends Component {
 
   render() {
     const {comment} = this.props;
-    // console.log(comment);
     return (
       <div key={comment.id} className="card">
         <p className="lead">{comment.body}</p>
