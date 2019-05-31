@@ -6,9 +6,8 @@ import {connect} from 'react-redux';
 
 class EditPost extends Component {
 
-  componentWillMount() {}
-
   render() {
+    console.log("id edit", this.props)
     return (
       <div className="container-fluid">
         <Navbar/>

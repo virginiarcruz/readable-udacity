@@ -26,7 +26,6 @@ class PostForm extends Component {
     this.setState({
       [event.target.id]: event.target.value
     });
-    // console.log(this.state)
   };
 
   componentWillMount() {
@@ -34,7 +33,6 @@ class PostForm extends Component {
     if (post_id !== undefined) {
       getPost(post_id)
     }
-
     getCategories()
   }
 
@@ -46,7 +44,6 @@ class PostForm extends Component {
 
   componentWillUnmount() {
     const {clearPost} = this.props;
-
     clearPost()
   }
 
@@ -67,7 +64,11 @@ class PostForm extends Component {
   }
 
   render() {
+    
     let {categories} = this.props;
+
+    console.log("post details", this.props)
+
     if (!categories) {
       categories = []
     }

@@ -21,7 +21,7 @@ class Posts extends Component {
       return posts.map((post) => (<Post post={post} key={post.id} vote={this.props.vote} deletePost={this.props.deletePost}/>))
     } else {
       return (
-        <h3>No Posts found!</h3>
+        <h3>No Posts found! :( </h3>
       )
     }
   }
@@ -32,12 +32,12 @@ class Posts extends Component {
     return (
       <div className="Posts">
         <h2>
-          Posts</h2>
+          Posts
+        </h2>
         {this.genPostList(posts)}
       </div>
     );
-  }
-}
+  }}
 
 function mapStateToProps(state) {
 

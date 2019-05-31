@@ -11,6 +11,7 @@ export default class Post extends Component {
 
   render() {
     const {post} = this.props;
+    // console.log(post.id)
     return (
       <div key={post.id} className="card">
         <h2>{post.title}</h2>

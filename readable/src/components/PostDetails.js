@@ -13,14 +13,16 @@ class PostDetails extends Component {
     // Manage direct url loading
     const {get} = this.props;
     const post_id = this.props.post_id;
+    // console.log('id details', this.props)
     if (post_id) {
       get(post_id)
     }
   }
 
   componentWillReceiveProps(props){
-    if (! props.post.id){
-      this.props.history.push("/404")
+    if (!props.post.id){
+      console.log('id diferente', props)
+      // this.props.history.push("/404")
     }
   }
 
@@ -34,7 +36,7 @@ class PostDetails extends Component {
     return (
       <div>
         <Post post={post} key={post.id} vote={this.props.voteFromDetailPage} deletePost={this.props.deletePost}/>
-        <Link to={`/${post.category}/posts/${post.id}/new_comment`} className="btn btn-primary btn-new-comment">Add Comment</Link>
+        <Link to={`/${post.category}/${post.id}/new_comment`} className="btn btn-primary btn-new-comment">Add Comment</Link>
         <SortSelect sortTarget="comments"/>
         <Comments post_id={this.props.post_id}/>
       </div>
@@ -43,7 +45,6 @@ class PostDetails extends Component {
 }
 
 function mapStateToProps(state) {
-
   return {post: state.Posts.post}
 }
 

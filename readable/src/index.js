@@ -35,7 +35,7 @@ const Root = ({store}) => (
         <Route exact path="/404" component={NotFoundPage}/>
         <Route exact path="/:category" component={Category}/>
         <Route exact path="/:category/:id" component={PostPage}/>
-        <Route exact path="/:category/:id/edit" component={EditPost}/>
+        <Route path="/:category/:id/edit" component={EditPost}/>
         <Route exact path="/comments/:comment_id/edit" component={EditComment}/>
       </Switch>
     </Router>

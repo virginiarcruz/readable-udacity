@@ -8,8 +8,12 @@ class SortSelect extends Component {
   handleChange = (e) => {
     const {sortPostsBy, sortCommentsBy, sortTarget} = this.props;
 
+    console.log("props", this.props);
+
+
     if (sortTarget === 'posts') {
       sortPostsBy(e.target.value)
+      console.log("aqui", e.target.value)
     } else if (sortTarget === 'comments') {
       sortCommentsBy(e.target.value)
     }
@@ -18,11 +22,14 @@ class SortSelect extends Component {
   render() {
 
     const {sortKeyPosts, sortKeyComments, sortTarget} = this.props;
-    console.log(sortKeyPosts, sortKeyComments, sortTarget);
+    // console.log("srte", sortTarget);
+    // console.log("posts", sortKeyPosts);
+    // console.log("target", sortTarget);
     return (
       <div className="sort-select-container">
         <span className="title-sort">Sort By:</span>
-        <select className="sort-select form-control" id="sort-by" value={sortTarget === "posts" ? sortKeyPosts : sortKeyComments} name="sort-by" onChange={this.handleChange}>
+        <select className="sort-select form-control" id="sort-by" 
+          value={sortTarget === "posts" ? sortKeyPosts : sortKeyComments} name="sort-by" onChange={this.handleChange}>
           <option value="voteScore">Vote Score</option>
           <option value="timestamp">Timestamp</option>
         </select>

@@ -88,13 +88,14 @@ function Posts(state = {sortKeyPosts: "voteScore"}, action) {
 
     case SORT_POSTS:
       // console.log("Sorting by ", action.prop);
+      const sortedPosts = [...state['posts']].sort((a, b) => a[action.prop] < b[action.prop]);
 
         return state.posts ?
-          {
-            ...state,
-            posts: state['posts'].sort((a, b) => a[action.prop] < b[action.prop]),
-            sortKeyPosts: action.prop
-          }
+        {
+          ...state,
+          posts: sortedPosts,
+          sortKeyPosts: action.prop
+        }
        :
         state
     default:

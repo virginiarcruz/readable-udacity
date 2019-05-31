@@ -29,7 +29,7 @@ export default class Comment extends Component {
           <span>By: {comment.author}</span>
           <span>
             on: {this.getDateTimeFromTimestamp(comment.timestamp)}
-            in</span>
+            in </span>
           <Button className="btn btn-danger" onClick={() => this.props.deleteComment(comment)}>
             Delete
           </Button>
