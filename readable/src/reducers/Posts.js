@@ -62,6 +62,7 @@ function Posts(state = {sortKeyPosts: "voteScore"}, action) {
       return state.posts ?
       {
         ...state,
+        
         posts: state.posts.map((post) => {
           if (post.id === action.id) {
             if (action.vote === "upVote") {
